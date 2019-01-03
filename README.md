@@ -1,6 +1,6 @@
 # MaterialsImages
 This repository contains code for handling the materials images and spectra dataset that is the largest expermental materials science dataset containign composition, images, UV-Vis spectra and processing information for about 180.000 compositions.
-The stand alone dataset can be found [here](https://data.caltech.edu/records/1152) and is published under the creative commons [cc-by](https://creativecommons.org/licenses/by/4.0/) license. The data was aquired at the [Joint Center for Artificial Photosynthesis High-Throughput Group](https://solarfuelshub.org/thrust-2) at Caltech.
+The stand alone dataset can be found [here](https://data.caltech.edu/records/1152) and is published under the creative commons [cc-by](https://creativecommons.org/licenses/by/4.0/) license. The data was aquired at the [Joint Center for Artificial Photosynthesis](https://solarfuelshub.org/thrust-2) at Caltech.
 ## Installation
 You'll need to install h5py and tqdm in a python >=3.6 environment via
 ```
