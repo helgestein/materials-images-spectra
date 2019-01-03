@@ -118,7 +118,7 @@ class MaterialsImages():
     def citation(self):
         print('When using this data please cite: ')
         
-m = MaterialsImages()
-m.show_datasets()
-m.get_spectrum(340)
-uc,ix,inv = m.get_indices_unique_compositions()
+#m = MaterialsImages()
+#m.show_datasets()
+#m.get_spectrum(340)
+#uc,ix,inv = m.get_indices_unique_compositions()
