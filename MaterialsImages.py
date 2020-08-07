@@ -16,7 +16,7 @@
 
 import os
 from pathlib import Path
-import urllib
+import urllib.request as urllib
 import h5py
 from tqdm import tqdm
 import numpy as np
@@ -24,14 +24,13 @@ import numpy as np
 class MaterialsImages():
     def __init__(self):
         self.url = r'https://data.caltech.edu/tindfiles/serve/3556fc6e-05a3-492a-967d-c797b60f8399/'
-
         #first check if data is downloaded
         self.dir_path = os.getcwd()
         self.filen = 'synthesis_imaging_spectroscopy_metal_oxides.h5'
         filep = Path(os.path.join(self.dir_path,self.filen))
-        if filep.is_file:
+        try:
             self.open_container() #it's there so open it
-        else:
+        except:
             self.download_container() #it's not there so download it
         
         self.images = self.f['images']
@@ -42,7 +41,7 @@ class MaterialsImages():
         
     def download_container(self):
         print('Downloading the dataset ... this might take a while!')
-        urllib.request.urlretrieve(self.url,
+        urllib.urlretrieve(self.url,
                                    os.path.join(self.dir_path,self.filen))
         print('Finished downloading! Opening file ...')
         self.open_container()
@@ -58,7 +57,7 @@ class MaterialsImages():
                     len(self.f[dataset]),
                     self.f[dataset].shape
                     ))
-    
+
     def get_composition(self,i):
         #returns the composition as a dict
         comp_vec = self.f['atfrac'][:,i]
