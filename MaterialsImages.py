@@ -115,7 +115,7 @@ class MaterialsImages():
         pass
     
     def citation(self):
-        print('When using this data please cite: ')
+        print('When using this data please cite: doi.org/10.1038/s41597-019-0019-4')
         
 #m = MaterialsImages()
 #m.show_datasets()
