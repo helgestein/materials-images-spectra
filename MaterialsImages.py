@@ -23,10 +23,10 @@ import numpy as np
 
 class MaterialsImages():
     def __init__(self):
-        self.url = r'https://data.caltech.edu/tindfiles/serve/3556fc6e-05a3-492a-967d-c797b60f8399/'
+        self.url = r'https://data.caltech.edu/records/km8xg-1yd31/files/dataset_comp_image_spectra.h5'
         #first check if data is downloaded
         self.dir_path = os.getcwd()
-        self.filen = 'synthesis_imaging_spectroscopy_metal_oxides.h5'
+        self.filen = 'dataset_comp_image_spectra.h5'
         filep = Path(os.path.join(self.dir_path,self.filen))
         try:
             self.open_container() #it's there so open it
@@ -37,7 +37,7 @@ class MaterialsImages():
         self.spectra = self.f['spectra']
         self.compositions = self.f['atfrac']
         self.loadings = self.f['loadings']
-        self.elements = [str(e,'utf-8').split('.PM')[0] for e in self.f['atfrac_keys']]
+        self.elements = np.array([str(e,'utf-8').split('.PM')[0] for e in self.f['atfrac_keys']])
         
     def download_container(self):
         print('Downloading the dataset ... this might take a while!')
@@ -116,7 +116,7 @@ class MaterialsImages():
     
     def citation(self):
         print('When using this data please cite: doi.org/10.1038/s41597-019-0019-4')
-        
+
 #m = MaterialsImages()
 #m.show_datasets()
 #m.get_spectrum(340)
