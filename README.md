@@ -21,6 +21,7 @@ There are come convenience functions build in like get spectrum that will return
 ```python
 spectrum = m.get_spectrum(1337)
 ```
+
 The same functions exist for image and loading.
 A special function is get_composition_string which will return a materialsproject compatible composition spring. Please note that we do not know the actual Oxygen content so that the string does not contain Oxygen.
 ```python
